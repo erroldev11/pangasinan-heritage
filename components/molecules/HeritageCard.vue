@@ -2,14 +2,12 @@
   <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
     <!-- Image Container -->
     <div class="relative h-56 w-full overflow-hidden">
-      <!-- PALITAN ITO -->
       <img 
-        :src="image" 
+        :src="resolvedImage" 
         :alt="title"
         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         loading="lazy"
       />
-      <!-- HANGGANG DITO -->
       
       <!-- Overlay Gradient -->
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -61,9 +59,11 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useRuntimeConfig } from '#app'
 import AppButton from '../atoms/AppButton.vue'
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true
@@ -92,6 +92,15 @@ defineProps({
     type: Number,
     default: 0
   }
+})
+
+// Prefix the image path with the app's baseURL (needed for GitHub Pages subpath)
+const config = useRuntimeConfig()
+const resolvedImage = computed(() => {
+  const base = config.app.baseURL.endsWith('/') 
+    ? config.app.baseURL.slice(0, -1) 
+    : config.app.baseURL
+  return base + props.image
 })
 
 defineEmits(['learn-more'])

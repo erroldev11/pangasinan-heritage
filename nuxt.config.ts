@@ -1,24 +1,11 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2026-09-07',
+  compatibilityDate: '2026-09-09',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/css/main.css'],
-  
-  // SSG Configuration
-  ssr: true,
-  nitro: {
-    static: true,  // ← Ito ang nag-e-enable ng static site generation!
-    compressPublicAssets: true,
-    routeRules: {
-      '/**': { 
-        headers: {
-          'Cache-Control': 'public, max-age=31536000, immutable'
-        }
-      }
-    }
-  },
-  
+
   app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/pangasinan-heritage/' : '/',
     head: {
       title: 'Pangasinan Heritage',
       meta: [
@@ -27,5 +14,10 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Discover the heritage sites of Pangasinan' }
       ]
     }
+  },
+
+  nitro: {
+    static: true,
+    compressPublicAssets: true
   }
 })

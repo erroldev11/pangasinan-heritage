@@ -2,15 +2,15 @@
   <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
     <!-- Image Container -->
     <div class="relative h-56 w-full overflow-hidden">
-      <NuxtImg
-        :src="image"
+      <!-- PALITAN ITO -->
+      <img 
+        :src="image" 
         :alt="title"
         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         loading="lazy"
-        format="webp"
-        quality="80"
-        sizes="sm:100vw md:50vw lg:33vw"
       />
+      <!-- HANGGANG DITO -->
+      
       <!-- Overlay Gradient -->
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
       

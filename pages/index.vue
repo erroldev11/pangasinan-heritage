@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative bg-navy-800 text-white py-24 overflow-hidden">
+    <section id="home" class="relative bg-navy-800 text-white py-24 overflow-hidden">
       <!-- Decorative Background -->
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-0 left-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl"></div>
@@ -45,14 +45,16 @@
     </section>
 
     <!-- Heritage Sites Grid -->
-    <HeritageGrid 
-      :sites="filteredSites"
-      title="Featured Heritage Sites"
-      @site-click="handleSiteClick"
-    />
+    <div id="sites">
+      <HeritageGrid 
+        :sites="filteredSites"
+        title="Featured Heritage Sites"
+        @site-click="handleSiteClick"
+      />
+    </div>
     
-    <!-- Call to Action -->
-    <section class="bg-navy-800 py-16 border-t border-navy-700">
+    <!-- About / Call to Action -->
+    <section id="about" class="bg-navy-800 py-16 border-t border-navy-700">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
           Ready to Explore Pangasinan?
@@ -63,6 +65,21 @@
         <button class="bg-yellow-400 text-navy-900 px-8 py-4 rounded-xl font-semibold hover:bg-yellow-300 transition shadow-lg hover:shadow-xl">
           Start Your Journey →
         </button>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-navy-900 py-16 border-t border-navy-700">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Get In Touch
+        </h2>
+        <p class="text-navy-300 text-lg mb-4 max-w-2xl mx-auto">
+          Have questions about visiting Pangasinan? Reach out to us.
+        </p>
+        <p class="text-yellow-400 font-semibold">
+          📧 info@pangasinanheritage.ph
+        </p>
       </div>
     </section>
   </div>

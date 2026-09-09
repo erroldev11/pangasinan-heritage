@@ -64,10 +64,10 @@ defineProps({
   navItems: {
     type: Array,
     default: () => [
-      { href: '/', label: 'Home', icon: '🏠' },
-      { href: '/sites', label: 'Sites', icon: '🏛️' },
-      { href: '/about', label: 'About', icon: 'ℹ️' },
-      { href: '/contact', label: 'Contact', icon: '📧' },
+      { href: '#home', label: 'Home', icon: '🏠' },
+      { href: '#sites', label: 'Sites', icon: '🏛️' },
+      { href: '#about', label: 'About', icon: 'ℹ️' },
+      { href: '#contact', label: 'Contact', icon: '📧' },
     ]
   },
   activePath: {

@@ -16,9 +16,9 @@
           <div>
             <h4 class="font-semibold mb-3 text-white">Quick Links</h4>
             <ul class="space-y-2 text-sm text-navy-300">
-              <li><a href="/" class="hover:text-white transition">Home</a></li>
-              <li><a href="/sites" class="hover:text-white transition">Heritage Sites</a></li>
-              <li><a href="/about" class="hover:text-white transition">About Us</a></li>
+              <li><a href="#home" class="hover:text-white transition">Home</a></li>
+              <li><a href="#sites" class="hover:text-white transition">Heritage Sites</a></li>
+              <li><a href="#about" class="hover:text-white transition">About Us</a></li>
             </ul>
           </div>
           <div>
